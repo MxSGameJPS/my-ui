@@ -1,30 +1,14 @@
-import ParticlesBackground from "./components/Particles"
-import styled from "styled-components"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DefaultLayout from "./Layout/DefautLayout";
+import Home from "./pages/Home";
 
-const MainContainer = styled.main`
-position: relative;
-z-index: 1; /*Para ficar na frente das particulas*/
-display : flex ;
-flex-direction : column ;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-color: #ffffff;
-`
-
-
-function App() {
-
+export default function App() {
   return (
-    <>
-      <ParticlesBackground />
-
-      <MainContainer>
-        <h1> Bem Vindos ao MyUI</h1>
-        <p>Seu Design System Pessoal</p>
-      </MainContainer>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DefaultLayout />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App

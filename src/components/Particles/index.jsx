@@ -89,12 +89,15 @@ export default function ParticlesBackground() {
     //Ligando o ref ao elemento html
     <canvas
       ref={canvasRef}
+      width={window.innerWidth}
+      height={window.innerHeight}
       style={{
         position: "fixed",
         top: 0,
         left: 0,
-        zIndex: -1, //Ficar atrás de tudo
+        zIndex: 1, //Ficar atrás de tudo
         background: "#121214",
+        pointerEvents: "none",
       }}
     />
   );
